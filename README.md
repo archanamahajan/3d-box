@@ -1,5 +1,5 @@
 # 3d-box
-draw 3d box/cube using highchart
+draw 3d box/cube using highchart by Archana Mahajan
 
 This plugin lets you draw a 3d box/cube:
 
