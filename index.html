@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>3D box using Highchart</title>
+        <script type="text/javascript" src="plugin/jquery.min.js"></script>
+        <script src="plugin/highcharts.js"></script>
+        <script src="3d-box.js"></script>
+              
+    </head>
+    <body>
+        <header>
+            Drawing 3d box using highchart plugin - by Archana Mahajan
+        </header>
+        <section>
+            <div id="3dBoxContainer"></div>
+            
+        </section>
+        <footer>
+
+        </footer>
+        <script type="text/javascript">
+            $('#3dBoxContainer').ready(function(){
+                console.log('on load of 3dBoxContainer');
+                var chart = new Highcharts.Chart({	
+                    chart: {
+                        renderTo: '3dBoxContainer',
+                        backgroundColor: '#ffffff',
+                        events: {
+                            load: function () {
+                                var ren = this.renderer;
+                                var obj = new Draw3DRectangle({
+                                    ren: ren,
+                                    xAxis: 200,
+                                    yAxis: 100,
+                                    height : 180,
+                                    width: 100,
+                                    breath: 50,
+                                    leftRectangleId: 'leftRectId_1',
+                                    bottomRectangleId: 'bottomRectId_1',
+                                    frontRectColor: '#ff0000',
+                                    leftRectColor: '#e50000',
+                                    bottomRectColor: '#cc0000'
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
